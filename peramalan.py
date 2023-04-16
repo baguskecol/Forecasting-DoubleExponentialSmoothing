@@ -19,7 +19,7 @@ st.sidebar.image(image=("kopi2.jpeg"), use_column_width=True)
 @st.cache
 def load_data():
     data = pd.read_excel('data.xlsx')
-    data['tahun'] = data['tahun'].astype('int64')
+    data['Tahun'] = data['Tahun'].astype('int64')
     # data = pd.read_excel('data.xlsx')
     return data
 data = load_data()
