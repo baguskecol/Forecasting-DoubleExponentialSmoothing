@@ -16,13 +16,18 @@ st.sidebar.image(image=("kopi2.jpeg"), use_column_width=True)
 
 
 # membaca data
-@st.cache
-def load_data():
-    data = pd.read_excel('data.xlsx')
-    data['Tahun'] = data['Tahun'].astype('int64')
-    # data = pd.read_excel('data.xlsx')
-    return data
-data = load_data()
+data = pd.read_excel('data.xlsx')
+
+# mengonversi kolom tahun menjadi tipe data int64
+data['Tahun'] = data['Tahun'].astype('int64')
+
+# @st.cache
+# def load_data():
+#     data = pd.read_excel('data.xlsx')
+
+#     # data = pd.read_excel('data.xlsx')
+#     return data
+# data = load_data()
 
 # menjadikan data menjadi data frame
 df = pd.DataFrame(data)
