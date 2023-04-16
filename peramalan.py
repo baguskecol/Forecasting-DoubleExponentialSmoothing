@@ -12,25 +12,13 @@ st.sidebar.markdown(
 st.sidebar.image(image=("kopi2.jpeg"), use_column_width=True)
 
 
-# Read the Excel file with specified data types
 
 
 # membaca data
 data = pd.read_excel('data.xlsx')
-
-# mengonversi kolom tahun menjadi tipe data int64
-data['Tahun'] = data['Tahun'].astype('int64')
-
-# @st.cache
-# def load_data():
-#     data = pd.read_excel('data.xlsx')
-
-#     # data = pd.read_excel('data.xlsx')
-#     return data
-# data = load_data()
-
-# menjadikan data menjadi data frame
+data = data.astype('int64')
 df = pd.DataFrame(data)
+df = df.astype('int64')
 
 st.write("<h1 style='text-align: center;'>Analisis Time Series Menggunakan Metode Double Exponential Smoothing dalam Memprediksi Produksi Komoditas Kopi di Indonesia</h1>", unsafe_allow_html=True)
 
