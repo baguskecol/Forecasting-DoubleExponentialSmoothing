@@ -15,7 +15,6 @@ st.sidebar.image(image=("kopi2.jpeg"), use_column_width=True)
 @st.cache
 def load_data():
     data = pd.read_excel('data.xlsx', dtype={'Tahun': 'int64'})
-    # data = pd.read_excel('data.xlsx')
     return data
 data = load_data()
 
@@ -182,13 +181,13 @@ fig = px.line(df, x='Tahun', y=['Produksi (ton)', 'Forecast'], title='Produksi K
 st.plotly_chart(fig)
 
 st.subheader('Kesimpulan :')
-text = """Berdasarkan hasil analisis dapat disimpulkan bahwa peramalan menggunakan metode Double Exponential 
-        Smoothing jika melihat dari tabel kategori berdasarkan nilai MAPE berada dibawah 10% menandakan 
-        bahwa hasil peramalan pada jumlah produksi komoditas kopi di Indonesia masuk ke dalam kategori 
-        sangat baik untuk digunakan sebagai pemodelan untuk peramalan dimasa yang akan datang. Dari hasil 
-        peramalan yang diperoleh menggunakan metode Double Exponential Smoothing menunjukkan adanya kenaikan 
-        pada 5 tahun terakhir dari hasil peramalan tahun 2018 sampai 2022 (716094, 761305, 766101, 774615, 
-        786210) dan hasil peramalan pada jumlah produksi di tahun 2023 adalah 804137 (ton)."""
+text = """Berdasarkan hasil analisis, dapat disimpulkan bahwa peramalan menggunakan metode Double Exponential 
+          Smoothing, dengan nilai MAPE yang berada di bawah 10%, masuk dalam kategori sangat baik untuk digunakan sebagai
+          pemodelan peramalan jumlah produksi kopi di Indonesia di masa yang akan datang. Hasil peramalan menunjukkan 
+          adanya kenaikan pada 5 tahun terakhir, dari hasil peramalan tahun 2018 sampai 2022 (716094, 761305, 766101, 
+          774615, 786210), dan hasil peramalan pada jumlah produksi di tahun 2023 adalah 804137 (ton). Dengan hasil 
+          penelitian ini, diharapkan dapat memberikan kontribusi yang signifikan dalam membantu para pengambil keputusan
+          di bidang pertanian untuk merencanakan produksi kopi di masa depan dengan lebih tepat dan efektif."""
 st.caption(text.rjust(60))
 
 # menggunakan nilai alpha dan beta optimal untuk peramalan
